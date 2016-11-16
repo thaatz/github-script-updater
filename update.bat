@@ -10,7 +10,7 @@ REM pushd "%~dp0"
 :: ====================
 :: USE THIS PART IF THE RELEASE IS THE SAME AS THE SOURCECODE/ZIPBALL/TARBALL
 :: ====================
-REM "%~dp0bin\wget" -nc --no-check-certificate --content-disposition https://api.github.com/repos/%user%/%repo%/zipball
+REM "%~dp0bin\wget" -nc --content-disposition https://api.github.com/repos/%user%/%repo%/zipball
 
 
 REM if %errorlevel%==1 (
@@ -31,8 +31,5 @@ rem this link will have double quotes around it
 
 REM "%~dp0bin\curl" -L -O %link:~30%
 "%~dp0bin\wget" -nc %link:~30%
-REM "%~dp0bin\wget" --no-check-certificate --content-disposition https://github.com/natedawg1013/let-there-be-light/releases/download/1.0.0/LetThereBeLight-1.0.0.jar
-REM del latest
-
-echo %errorlevel%
+del latest
 pause
